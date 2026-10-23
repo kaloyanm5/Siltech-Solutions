@@ -3,7 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SiLTech Solutions LLC — CNC Repair, Calibration & Maintenance</title>
+<title>CNC Repair &amp; Calibration in PA, NJ, DE &amp; NY | SiLTech Solutions LLC</title>
+<meta name="description" content="SiLTech Solutions LLC repairs, calibrates, and maintains CNC machines across PA, NJ, DE, and NY. Nearly 30 years of hands-on experience. Call 215-715-0653.">
+<link rel="canonical" href="https://siltechsolutions.org/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SiLTech Solutions LLC">
+<meta property="og:title" content="CNC Repair, Calibration &amp; Maintenance | SiLTech Solutions LLC">
+<meta property="og:description" content="Precision CNC repair, calibration, and maintenance for shops across PA, NJ, DE, and NY.">
+<meta property="og:url" content="https://siltechsolutions.org/">
+<meta name="theme-color" content="#1B2027">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "SiLTech Solutions LLC",
+  "url": "https://siltechsolutions.org/",
+  "description": "CNC machine repair, calibration, and maintenance for manufacturers and machine shops in Pennsylvania, New Jersey, Delaware, and New York.",
+  "telephone": "+1-215-715-0653",
+  "email": "siltech2025@outlook.com",
+  "areaServed": [
+    {
+      "@type": "State",
+      "name": "Pennsylvania"
+    },
+    {
+      "@type": "State",
+      "name": "New Jersey"
+    },
+    {
+      "@type": "State",
+      "name": "Delaware"
+    },
+    {
+      "@type": "State",
+      "name": "New York"
+    }
+  ],
+  "knowsAbout": [
+    "CNC machine repair",
+    "CNC machine calibration",
+    "CNC preventive maintenance"
+  ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "CNC Repair"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "CNC Calibration"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "CNC Maintenance"
+      }
+    }
+  ]
+}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -414,6 +477,19 @@
   form{transition:box-shadow .3s ease;}
   form:focus-within{box-shadow:0 16px 40px -16px rgba(27,32,39,0.18);}
 
+  /* Formspree states — library toggles [data-fs-active] on these elements */
+  [data-fs-success], [data-fs-error]{display:none;}
+  [data-fs-success][data-fs-active], [data-fs-error=''][data-fs-active]{
+    display:block; font-family:'IBM Plex Sans'; font-size:14px; padding:14px 16px;
+    margin-bottom:4px; border-left:3px solid var(--brass);
+  }
+  [data-fs-success][data-fs-active]{background:#F4EEE3; color:var(--ink);}
+  [data-fs-error=''][data-fs-active]{background:#F7E9E4; border-left-color:#B04A2E; color:#7A2E1A; font-family:'IBM Plex Mono'; font-size:12.5px;}
+  [data-fs-error]:not([data-fs-error=''])[data-fs-active]{
+    display:block; font-family:'IBM Plex Mono'; font-size:11.5px; color:#B04A2E; margin-top:-2px;
+  }
+  [data-fs-field][aria-invalid='true']{border-color:#B04A2E;}
+
   /* Section head underline accent */
   .eyebrow::before{ animation:none; }
 
@@ -683,27 +759,44 @@
       <div class="info-row"><span class="label">Services</span><span>CNC Repair · Calibration · Maintenance</span></div>
       <div class="info-row"><span class="label">Coverage</span><span>PA · NJ · DE · NY</span></div>
     </div>
-    <form class="reveal" action="mailto:siltech2025@outlook.com" method="post" enctype="text/plain">
+    <form class="reveal" id="request-form" action="https://formspree.io/f/mdendkqg" method="POST">
+      <input type="hidden" name="_subject" value="New Service Request — SiLTech Website">
+      <div data-fs-success></div>
+      <div data-fs-error></div>
       <div class="field">
         <label for="name">Name</label>
-        <input id="name" name="name" type="text" required>
+        <input id="name" name="name" type="text" data-fs-field required>
+        <span data-fs-error="name"></span>
       </div>
       <div class="field">
         <label for="company">Company</label>
-        <input id="company" name="company" type="text">
+        <input id="company" name="company" type="text" data-fs-field>
       </div>
       <div class="field">
         <label for="phone">Phone</label>
-        <input id="phone" name="phone" type="tel" required>
+        <input id="phone" name="phone" type="tel" data-fs-field required>
+        <span data-fs-error="phone"></span>
+      </div>
+      <div class="field">
+        <label for="email">Email <span style="text-transform:none; letter-spacing:0; color:var(--steel-light);">(optional, for a written reply)</span></label>
+        <input id="email" name="email" type="email" data-fs-field>
+        <span data-fs-error="email"></span>
       </div>
       <div class="field">
         <label for="message">What's going on?</label>
-        <textarea id="message" name="message" required placeholder="e.g. 3-axis mill throwing a servo fault, need repair this week"></textarea>
+        <textarea id="message" name="message" data-fs-field required placeholder="e.g. 3-axis mill throwing a servo fault, need repair this week"></textarea>
+        <span data-fs-error="message"></span>
       </div>
-      <button type="submit" class="btn btn-primary"><span class="btn-fill"></span><span class="btn-label">Send Request</span></button>
+      <button type="submit" class="btn btn-primary" data-fs-submit-btn><span class="btn-fill"></span><span class="btn-label">Send Request</span></button>
     </form>
   </div>
 </section>
+
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#request-form', formId: 'mdendkqg' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 <footer>
   <div class="wrap footer-row">
